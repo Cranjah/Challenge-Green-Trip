@@ -1,2 +1,5 @@
-# Challenge-Green-Trip
-Nachhaltigkeit ist der DB ein wichtiges Thema, was aber oft wenig sichtbar gemacht wird. Den Bahnkund*innen fehlt manchmal der Bezug dazu, wie viele Emissionen tatsächlich eingespart werden. Durch die Website „Green Trip Challenge“ werden Emissionseinsparungen sichtbar für Bahnkund*innen, durch gamifiziertes Erleben beim Nutzen von Bahnprodukten.
+## GREEN TRIP CHALLENGE
+
+### Abstract und Zusammenfassung:
+
+Nachhaltigkeit ist ein wichtiges Thema, wird aber oft wenig sichtbar gemacht – außer durch Imagemaßnahmen. Den Bahnkund:innen fehlt manchmal der Bezug und das Verhältnis dazu, wie viele Emissionen tatsächlich eingespart werden, vor allem beim Nutzen von Bahnprodukten. Durch die Website „Green Trip Challenge“ werden Emissionseinsparungen sichtbar für Bahnkund:innen, durch gamifiziertes Erleben beim Nutzen von Bahnprodukten. Die Website „Green Trip Challenge“ macht nachhaltiges Verhalten sichtbar und erlebbar durch Sharingfunktionen in den sozialen Medien – vor allem aber auch das Leaderboard (und speziell das Klettern auf der Rangliste dort), werden Anreize zum nachhaltigen Reisen geschaffen, aber auch Badges und Awards als Belohnungen warten auf, sowie die Möglichkeit XP zu sammeln. Auf Seiten des Backends wird die Anwendung durch das Python-Framework Flask und SQLite und die RIS-API betrieben, auf Seiten des Frontends wird die Darstellung mit HTML, CSS und JavaScript oder alternativ Jinja realisiert.

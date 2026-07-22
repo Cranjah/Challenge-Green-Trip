@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Awards
+{% endblock %}
+
+{% block main %}
+    <h1>Your Awards</h1>
+    <br>
+    <div class="awards-container">
+        {% if best_rank == 1 %}
+            <div class="award">
+            <img src="{{ url_for('static', filename='award1.svg') }}">
+            </div>
+        {% endif %}
+        {% if best_rank is not none and best_rank <= 2 %}
+            <div class="award">
+            <img src="{{ url_for('static', filename='award2.svg') }}">
+            </div>
+        {% endif %}
+        {% if best_rank is not none and best_rank <= 3 %}
+            <div class="award">
+            <img src="{{ url_for('static', filename='award3.svg') }}">
+            </div>
+        {% else %}
+            <div class="award">
+            <img src="{{ url_for('static', filename='award0.svg') }}">
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

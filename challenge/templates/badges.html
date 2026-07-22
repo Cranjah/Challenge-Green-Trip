@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Badges
+{% endblock %}
+
+{% block main %}
+    <h1>Your Badges</h1>
+    <br>
+<div class="badges-container">
+    <div class="badge">
+        {% if trips200 >= 10 %}
+            <img src="{{ url_for('static', filename='herobadge2.svg') }}">
+        {% elif trips50 >= 10 %}
+            <img src="{{ url_for('static', filename='herobadge1.svg') }}">
+        {% else %}
+            <img src="{{ url_for('static', filename='herobadge0.svg') }}">
+        {% endif %}
+    </div>
+    <div class="badge">
+        {% if total_km >= 2000 %}
+            <img src="{{ url_for('static', filename='kmbadge6.svg') }}">
+        {% elif total_km >= 1000 %}
+            <img src="{{ url_for('static', filename='kmbadge5.svg') }}">
+        {% elif total_km >= 800 %}
+            <img src="{{ url_for('static', filename='kmbadge4.svg') }}">
+        {% elif total_km >= 400 %}
+            <img src="{{ url_for('static', filename='kmbadge3.svg') }}">
+        {% elif total_km >= 200 %}
+            <img src="{{ url_for('static', filename='kmbadge2.svg') }}">
+        {% elif total_km >= 100 %}
+            <img src="{{ url_for('static', filename='kmbadge1.svg') }}">
+        {% else %}
+            <img src="{{ url_for('static', filename='kmbadge0.svg') }}">
+        {% endif %}
+    </div>
+    <div class="badge">
+        {% if total_co2 >= 1000 %}
+            <img src="{{ url_for('static', filename='co2badge5.svg') }}">
+        {% elif total_co2 >= 800 %}
+            <img src="{{ url_for('static', filename='co2badge4.svg') }}">
+        {% elif total_co2 >= 400 %}
+            <img src="{{ url_for('static', filename='co2badge3.svg') }}">
+        {% elif total_co2 >= 200 %}
+            <img src="{{ url_for('static', filename='co2badge2.svg') }}">
+        {% elif total_co2 >= 100 %}
+            <img src="{{ url_for('static', filename='co2badge1.svg') }}">
+        {% else %}
+            <img src="{{ url_for('static', filename='co2badge0.svg') }}">
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

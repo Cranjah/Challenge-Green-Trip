@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trip Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>Trip Portfolio</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col">Start</th>
+                <th class="col">Destination</th>
+                <th class="text-end">KM</th>
+                <th class="text-end">C02</th>
+                <th class="text-end">XP</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for trip in trips %}
+            <tr>
+                <td>{{ trip.start }}</td>
+                <td>{{ trip.destination }}</td>
+                <td class="text-end">{{ trip.km }}</td>
+                <td class="text-end">{{ trip.co2 }}</td>
+                <td class="text-end">{{ trip.xp }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

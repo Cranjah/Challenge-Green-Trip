@@ -176,7 +176,7 @@ def awards():
         SELECT best_rank
         FROM users
         WHERE id = ?
-        """,
+    """,
         session["user_id"],
     )
 
@@ -237,7 +237,8 @@ def badges():
 def leaderboard():
     """Showcase the leaderboard"""
 
-    users = db.execute("""
+    users = db.execute(
+        """
         SELECT
             id,
             ROW_NUMBER() OVER (ORDER BY KM DESC) AS rank,
@@ -247,7 +248,8 @@ def leaderboard():
             XP AS xp
         FROM users
         ORDER BY KM DESC
-    """)
+    """
+    )
 
     for rank, user in enumerate(users, start=1):
 

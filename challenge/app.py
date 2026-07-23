@@ -63,7 +63,7 @@ def index():
 @app.route("/index")
 @login_required
 def tripportfolio():
-    """Show trip portfolio"""
+    """Show portfolio of trips"""
 
     trips = db.execute(
         """
@@ -191,7 +191,7 @@ def awards():
 @app.route("/badges")
 @login_required
 def badges():
-    """Show earned badges"""
+    """Show all earned badges"""
 
     user_id = session["user_id"]
 

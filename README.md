@@ -6,7 +6,16 @@ Nachhaltigkeit ist ein wichtiges Thema, wird aber oft wenig sichtbar gemacht –
 
 ### Setup der Flask Web Application:
 
-Hier eine Schritt-für-Schritt-Anleitung für macOS, die für das Setup Terminal auszuführen ist.
+Hier eine Schritt-für-Schritt-Anleitung für macOS, die für das Setup auszuführen ist.
+
+0. Schritt - Erstellung eines kostenlosen API-Schlüssels bei HeiGIT:
+```bash
+0.1 Besuche die Webseite https://api.heigit.org/ und erstelle einen Account.
+0.2 Kopiere den persönlichen, kostenlosen API-Schlüssel von der Webseite.
+0.3 Ersetze den API-Schlüssel der Variable HeiGIT_APIKEY der Datei "apisecrets.py".
+```
+
+Ab hier sind die Befehle im Terminal auszuführen:
 
 1. Schritt - Wechsel in den Ordner "challenge" mit cd:
 ```bash
@@ -29,7 +38,7 @@ source venv/bin/activate
 flask run
 ```
 
-5. Schritt - Öffnen der angezeigten URL mit der IP-Adresse / dem Port im Browser:
+5. Schritt - Öffnen der angezeigten URL mit der IP-Adresse und dem Port im Browser:
 ```bash
 http://127.0.0.1:5000/
 ```

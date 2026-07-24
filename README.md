@@ -22,16 +22,17 @@ Ab hier sind die Befehle im Terminal auszuführen:
 cd challenge
 ```
 
-2. Schritt - Lokale Installation der "requirements.txt" mit pip install:
-```bash
-py -m pip install -r requirements.txt
-```
-
-3. Schritt - Aufsetzen der Umgebungsvariable "venv" mit:
+2. Schritt - Aufsetzen der Umgebungsvariable "venv" mit:
 ```bash
 py -m venv venv
 venv\Scripts\activate
 set FLASK_APP=app.py  
+```
+
+3. Schritt - Lokale Installation der "requirements.txt" mit pip install:
+```bash
+python.exe -m pip install --upgrade pip   
+py -m pip install -r requirements.txt
 ```
 
 4. Schritt - Lokaler Start der Webapplikation mit "flask run":

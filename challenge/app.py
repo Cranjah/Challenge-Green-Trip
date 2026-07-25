@@ -290,8 +290,14 @@ def registertrips():
 
         try:
             km = distance(start, destination)
-        except (TypeError, ValueError):
-            return apology("Distance calculation not possible!", 400)
+
+        except ValueError as e:
+            print(e)
+            return apology("You must provide an existing location!", 400)
+
+        except Exception as e:
+            print(e)
+            return apology("You must provide an existing location!", 400)
 
         co2 = emissions(km)
         xp = experience(km)
@@ -328,3 +334,4 @@ def registertrips():
         return redirect("/index")
 
     return render_template("registertrips.html")
+

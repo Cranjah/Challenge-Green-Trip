@@ -334,4 +334,3 @@ def registertrips():
         return redirect("/index")
 
     return render_template("registertrips.html")
-

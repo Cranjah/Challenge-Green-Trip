@@ -41,19 +41,21 @@ def distance(start: str, destination: str):
 
     try:
         beginning = requests.get(
-            url, params={"api_key": APIKEY, "text": start, "size": 1}
+            url, params={"api_key": APIKEY, "text": start, "size": 1},
+            timeout=15
         )
         beginning.raise_for_status()
         beginning = beginning.json()
 
         arrival = requests.get(
-            url, params={"api_key": APIKEY, "text": destination, "size": 1}
+            url, params={"api_key": APIKEY, "text": destination, "size": 1},
+            timeout=15
         )
         arrival.raise_for_status()
         arrival = arrival.json()
 
     except requests.RequestException:
-        raise ValueError("Location service unavailable!")
+        raise RuntimeError("Location service unavailable")
 
     if not beginning.get("features"):
         raise ValueError(f"Unknown start city: {start}")
@@ -66,20 +68,21 @@ def distance(start: str, destination: str):
         arrcoords = arrival["features"][0]["geometry"]["coordinates"]
 
     except (KeyError, IndexError):
-        raise ValueError("Invalid location data returned!")
+        raise ValueError("Invalid location data returned")
 
     try:
         route = requests.post(
             "https://api.openrouteservice.org/v2/directions/driving-car",
             headers={"Authorization": APIKEY, "Content-Type": "application/json"},
             json={"coordinates": [begcoords, arrcoords]},
+            timeout=20
         )
 
         route.raise_for_status()
         route = route.json()
 
     except requests.RequestException:
-        raise ValueError("Route calculation failed")
+        raise RuntimeError("Route calculation failed")
 
     if not route.get("routes"):
         raise ValueError(f"No route found between {start} and {destination}")

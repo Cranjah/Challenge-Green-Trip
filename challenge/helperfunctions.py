@@ -39,15 +39,21 @@ def distance(start: str, destination: str):
     url = "https://api.openrouteservice.org/geocode/search"
     APIKEY = HeiGIT_APIKEY
 
-    beginning = requests.get(url, params={"api_key": APIKEY, "text": start, "size": 1})
-    beginning.raise_for_status()
-    beginning = beginning.json()
+    try:
+        beginning = requests.get(
+            url, params={"api_key": APIKEY, "text": start, "size": 1}
+        )
+        beginning.raise_for_status()
+        beginning = beginning.json()
 
-    arrival = requests.get(
-        url, params={"api_key": APIKEY, "text": destination, "size": 1}
-    )
-    arrival.raise_for_status()
-    arrival = arrival.json()
+        arrival = requests.get(
+            url, params={"api_key": APIKEY, "text": destination, "size": 1}
+        )
+        arrival.raise_for_status()
+        arrival = arrival.json()
+
+    except requests.RequestException:
+        raise ValueError("Location service unavailable!")
 
     if not beginning.get("features"):
         raise ValueError(f"Unknown start city: {start}")
@@ -55,17 +61,25 @@ def distance(start: str, destination: str):
     if not arrival.get("features"):
         raise ValueError(f"Unknown destination city: {destination}")
 
-    begcoords = beginning["features"][0]["geometry"]["coordinates"]
-    arrcoords = arrival["features"][0]["geometry"]["coordinates"]
+    try:
+        begcoords = beginning["features"][0]["geometry"]["coordinates"]
+        arrcoords = arrival["features"][0]["geometry"]["coordinates"]
 
-    route = requests.post(
-        "https://api.openrouteservice.org/v2/directions/driving-car",
-        headers={"Authorization": APIKEY, "Content-Type": "application/json"},
-        json={"coordinates": [begcoords, arrcoords]},
-    )
+    except (KeyError, IndexError):
+        raise ValueError("Invalid location data returned!")
 
-    route.raise_for_status()
-    route = route.json()
+    try:
+        route = requests.post(
+            "https://api.openrouteservice.org/v2/directions/driving-car",
+            headers={"Authorization": APIKEY, "Content-Type": "application/json"},
+            json={"coordinates": [begcoords, arrcoords]},
+        )
+
+        route.raise_for_status()
+        route = route.json()
+
+    except requests.RequestException:
+        raise ValueError("Route calculation failed")
 
     if not route.get("routes"):
         raise ValueError(f"No route found between {start} and {destination}")

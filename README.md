@@ -85,3 +85,7 @@ flask run
 http://127.0.0.1:5000/
 ```
 </details>
+
+### Die Inspiration für dieses Projekt:
+
+Dieses Projekt basiert **stark abgewandelt** auf der Aufgabe "Finance" der Kursreihe CS50 (Harvard University).

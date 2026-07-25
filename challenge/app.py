@@ -277,7 +277,8 @@ def leaderboard():
 @app.route("/registertrips", methods=["GET", "POST"])
 @login_required
 def registertrips():
-
+    """Register new trips for portfolio"""
+    
     start = request.form.get("start")
     destination = request.form.get("destination")
 
@@ -291,13 +292,14 @@ def registertrips():
         try:
             km = distance(start, destination)
 
-        except ValueError as e:
-            print(e)
+        except ValueError:
             return apology("You must provide an existing location!", 400)
 
-        except Exception as e:
-            print(e)
-            return apology("You must provide an existing location!", 400)
+        except RuntimeError:
+            return apology("The location service is temporarily unavailable. Please try again later.", 503)
+
+        except TypeError:
+            return apology("Distance calculation not possible!", 400)
 
         co2 = emissions(km)
         xp = experience(km)

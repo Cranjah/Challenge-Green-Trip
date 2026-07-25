@@ -18,7 +18,37 @@
         {% endif %}
     </div>
     <div class="badge">
-        {% if total_km >= 2000 %}
+        {% if total_km >= 10000000 %}
+            <img src="{{ url_for('static', filename='kmbadge21.svg') }}">
+        {% elif total_km >= 8000000 %}
+            <img src="{{ url_for('static', filename='kmbadge20.svg') }}">
+        {% elif total_km >= 4000000 %}
+            <img src="{{ url_for('static', filename='kmbadge19.svg') }}">
+        {% elif total_km >= 2000000 %}
+            <img src="{{ url_for('static', filename='kmbadge18.svg') }}">
+        {% elif total_km >= 1000000 %}
+            <img src="{{ url_for('static', filename='kmbadge17.svg') }}">
+        {% elif total_km >= 800000 %}
+            <img src="{{ url_for('static', filename='kmbadge16.svg') }}">
+        {% elif total_km >= 400000 %}
+            <img src="{{ url_for('static', filename='kmbadge15.svg') }}">
+        {% elif total_km >= 200000 %}
+            <img src="{{ url_for('static', filename='kmbadge14.svg') }}">
+        {% elif total_km >= 100000 %}
+            <img src="{{ url_for('static', filename='kmbadge13.svg') }}">
+        {% elif total_km >= 80000 %}
+            <img src="{{ url_for('static', filename='kmbadge12.svg') }}">
+        {% elif total_km >= 40000 %}
+            <img src="{{ url_for('static', filename='kmbadge11.svg') }}">
+        {% elif total_km >= 20000 %}
+            <img src="{{ url_for('static', filename='kmbadge10.svg') }}">
+        {% elif total_km >= 10000 %}
+            <img src="{{ url_for('static', filename='kmbadge9.svg') }}">
+        {% elif total_km >= 8000 %}
+            <img src="{{ url_for('static', filename='kmbadge8.svg') }}">
+        {% elif total_km >= 4000 %}
+            <img src="{{ url_for('static', filename='kmbadge7.svg') }}">
+        {% elif total_km >= 2000 %}
             <img src="{{ url_for('static', filename='kmbadge6.svg') }}">
         {% elif total_km >= 1000 %}
             <img src="{{ url_for('static', filename='kmbadge5.svg') }}">
@@ -35,7 +65,39 @@
         {% endif %}
     </div>
     <div class="badge">
-        {% if total_co2 >= 1000 %}
+        {% if total_co2 >= 10000000 %}
+            <img src="{{ url_for('static', filename='co2badge21.svg') }}">
+        {% elif total_co2 >= 8000000 %}
+            <img src="{{ url_for('static', filename='co2badge20.svg') }}">
+        {% elif total_co2 >= 4000000 %}
+            <img src="{{ url_for('static', filename='co2badge19.svg') }}">
+        {% elif total_co2 >= 2000000 %}
+            <img src="{{ url_for('static', filename='co2badge18.svg') }}">
+        {% elif total_co2 >= 1000000 %}
+            <img src="{{ url_for('static', filename='co2badge17.svg') }}">
+        {% elif total_co2 >= 800000 %}
+            <img src="{{ url_for('static', filename='co2badge16.svg') }}">
+        {% elif total_co2 >= 400000 %}
+            <img src="{{ url_for('static', filename='co2badge15.svg') }}">
+        {% elif total_co2 >= 200000 %}
+            <img src="{{ url_for('static', filename='co2badge14.svg') }}">
+        {% elif total_co2 >= 100000 %}
+            <img src="{{ url_for('static', filename='co2badge13.svg') }}">
+        {% elif total_co2 >= 80000 %}
+            <img src="{{ url_for('static', filename='co2badge12.svg') }}">
+        {% elif total_co2 >= 40000 %}
+            <img src="{{ url_for('static', filename='co2badge11.svg') }}">
+        {% elif total_co2 >= 20000 %}
+            <img src="{{ url_for('static', filename='co2badge10.svg') }}">
+        {% elif total_co2 >= 10000 %}
+            <img src="{{ url_for('static', filename='co2badge9.svg') }}">
+        {% elif total_co2 >= 8000 %}
+            <img src="{{ url_for('static', filename='co2badge8.svg') }}">
+        {% elif total_co2 >= 4000 %}
+            <img src="{{ url_for('static', filename='co2badge7.svg') }}">
+        {% elif total_co2 >= 2000 %}
+            <img src="{{ url_for('static', filename='co2badge6.svg') }}">
+        {% elif total_co2 >= 1000 %}
             <img src="{{ url_for('static', filename='co2badge5.svg') }}">
         {% elif total_co2 >= 800 %}
             <img src="{{ url_for('static', filename='co2badge4.svg') }}">

@@ -89,3 +89,9 @@ http://127.0.0.1:5000/
 ### Die Inspiration für dieses Projekt:
 
 Dieses Projekt basiert **stark abgewandelt** auf der Aufgabe "Finance" der Kursreihe CS50 (Harvard University).
+
+### Die Architektur hinter der Software:
+
+<span>
+  <img alt="Diagram of the Software Architecture behind this Project" src="https://raw.githubusercontent.com/Cranjah/Challenge-Green-Trip/refs/heads/main/images/diagram.png">
+</span>
